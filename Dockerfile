@@ -3,6 +3,6 @@ MAINTAINER Stefan Biermann
 
 RUN apk add --update supervisor\
         && rm -rf /var/cache/apk/*
+COPY entrypoint.sh /entrypoint.sh 
 
-
-ENTRYPOINT ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+ENTRYPOINT ["/entrypoint.sh"]
